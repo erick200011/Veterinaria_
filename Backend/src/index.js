@@ -1,9 +1,9 @@
-
-//IMPORTACIÓN DE LA VARIABLE APP POR MEDIO DE MODULOS
-import app from './server.js'
+import app from './server.js';
 import connection from './database.js';
+
+
 connection()
-//eJECUTAR EL SERVIDOR POR MEDIO DEL PUERTO PORT
+// Ejecutar el servidor por medio del puerto
 app.listen(app.get('port'),()=>{
-    console.log(`Server ok on http://localhost:${app.get('port')}`);
+    console.log(`Servidor activo en http://localhost:${app.get('port')}`);
 })

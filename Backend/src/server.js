@@ -1,4 +1,4 @@
-//Type module
+// Realizar importaciones
 import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors';
@@ -25,6 +25,5 @@ app.use('/api',routerVeterinarios)
 app.use('/api',routerPacientes)
 // Manejo de una ruta que no sea encontrada
 app.use((req,res)=>res.status(404).send("Endpoint no encontrado - 404"))
-
-//EXPORTACIÓN DE LA VARIABLE PP
+// Exportación de la variable app
 export default  app

@@ -1,30 +1,27 @@
-//Importar el modelos
 import jwt from 'jsonwebtoken'
 import Veterinario from '../models/Veterinario.js'
 
-//Definir el modelo para  para validar jwt
+// Definir la función para validar el jwt
 const verificarAutenticacion = async (req,res,next)=>{
-
- //Validacion de JWT
-//req.bdy
-//req.params
-//req.headers.auhotrization
+// validacion del jwt
+    // req.body
+    // req.params
+    // req.headers.authorization
 if(!req.headers.authorization) return res.status(404).json({msg:"Lo sentimos, debes proprocionar un token"})    
-
-   //Obtener el JWT
+    // obtener el jwt
     const {authorization} = req.headers
     try {
-        //Obtener solo el token y verificar el mismo
+        // Obtener solo el token y verificar el mismo
         const {id} = jwt.verify(authorization.split(' ')[1],process.env.JWT_SECRET)
-        //Obtneer el usuario en base BD
+        // Obtener el ususario en base el ID
         req.veterinarioBDD = await Veterinario.findById(id).lean().select("-password")
-        //next
+        // Next
         next()
     } catch (error) {
-        //Mandar sms de error
+        // Mandar mensajes de error
         const e = new Error("Formato del token no válido")
         return res.status(404).json({msg:e.message})
     }
 }
-//exportar la funcion
+
 export default verificarAutenticacion

@@ -1,5 +1,5 @@
 {
-  "name": "api_veterianaria_web",
+  "name": "api_resful_gestion_veterinaria",
   "version": "1.0.0",
   "type": "module",
   "description": "",
@@ -19,9 +19,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0",
-    "mongodb": "^5.7.0",
-    "mongoose": "^7.3.1",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.3.2",
     "nodemailer": "^6.9.3"
   },
   "devDependencies": {

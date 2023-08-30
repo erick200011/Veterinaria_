@@ -1,7 +1,8 @@
-
+// Imporación del schema del modelo
 import {Schema, model} from 'mongoose'
+// Encriptar el password
 import bcrypt from "bcryptjs"
-
+// Cracion del Schema
 const veterinarioSchema = new Schema({
     nombre:{
         type:String,

@@ -1,4 +1,3 @@
-
 import Paciente from "../models/Paciente.js"
 import mongoose from "mongoose"
 
@@ -13,7 +12,8 @@ const detallePaciente = async(req,res)=>{
     const paciente = await Paciente.findById(id).select("-createdAt -updatedAt -__v").populate('veterinario','_id nombre apellido')
     res.status(200).json(paciente)
 }
-const registrarPaciente = async (req,res)=>{
+
+const registrarPaciente = async(req,res)=>{
     if (Object.values(req.body).includes("")) return res.status(400).json({msg:"Lo sentimos, debes llenar todos los campos"})
     const nuevoPaciente = new Paciente(req.body)
     nuevoPaciente.veterinario=req.veterinarioBDD._id
