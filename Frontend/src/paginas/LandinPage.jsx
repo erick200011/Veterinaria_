@@ -11,14 +11,15 @@ export const LandinPage = () => {
     useEffect(() => {
         if (darkMode) {
             document.body.classList.add("dark");
+            document.body.style.backgroundColor = "#2d3748"; // Fondo oscuro para el body
         } else {
             document.body.classList.remove("dark");
+            document.body.style.backgroundColor = "#ffffff"; // Fondo blanco para el body
         }
     }, [darkMode]);
 
     return (
         <div>
-
             <main className='bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-800'>
                 <section>
                     <nav className='p-10 mb-12 flex justify-between'>
@@ -53,7 +54,6 @@ export const LandinPage = () => {
                     </div>
                 </section>
             </main>
-
         </div>
     );
 };
