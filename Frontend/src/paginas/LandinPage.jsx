@@ -1,13 +1,23 @@
 import logoDarkMode from '../assets/dark.png'
 import logoGithub from '../assets/github.png'
 import logoLinkedind from '../assets/linkedin.png'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 export const LandinPage = () => {
-    const [darkMode, setdarkMode] = useState(false)
+    const [darkMode, setdarkMode] = useState(false);
+
+    // Cambiar la clase dark en el body
+    useEffect(() => {
+        if (darkMode) {
+            document.body.classList.add("dark");
+        } else {
+            document.body.classList.remove("dark");
+        }
+    }, [darkMode]);
+
     return (
-        <div className={darkMode ? "dark" : ""}>
+        <div>
 
             <main className='bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-800'>
                 <section>
@@ -45,5 +55,5 @@ export const LandinPage = () => {
             </main>
 
         </div>
-    )
-}
+    );
+};
