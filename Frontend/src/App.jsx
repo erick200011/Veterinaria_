@@ -17,6 +17,7 @@ import Perfil from './paginas/Perfil'
 import { Confirmar } from './paginas/Confirmar'
 import Restablecer from './paginas/Restablecer'
 import { PrivateRoute } from './routes/PrivateRoute'
+import '../src/global.css'
 
 
 function App() {
